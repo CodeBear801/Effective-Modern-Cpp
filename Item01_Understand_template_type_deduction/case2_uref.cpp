@@ -16,6 +16,7 @@
  *   * If expr is an rvalue, the usual type deduction rules apply.
  *
  */
+#include <utility>
 
 template<typename T>
 void f(T&& param) {}      // param is now a universal reference
@@ -26,7 +27,7 @@ int main()
   const int cx = x;       // as before
   const int& rx = x;      // as before
 
-  f(x);                   // x is lvalue, so T is int&,
+  f(std::move(x));                   // x is lvalue, so T is int&,
                           // param's type is also int&
 
   f(cx);                  // cx is lvalue, so T is const int&,
