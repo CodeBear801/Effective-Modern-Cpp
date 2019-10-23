@@ -5,7 +5,7 @@
   non-references, i.e., their reference-ness is ignored.
 
 * When deducing types for universal reference parameters, lvalue arguments get
-  special treatment.
+  special treatment.  Due to universal reference is also reference.
 
 * When deducing types for by-value parameters, const and/or volatile arguments
   are treated as non-const and non-volatile.
